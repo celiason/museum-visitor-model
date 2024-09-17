@@ -4,6 +4,8 @@
 
 This project looks at visitor data and social media timelines to predict lags/changes in visitor rates.
 
+![Predicted Visitors](images/visitors_predicted.png)
+
 ## Data sets
 
 - Museum visitor data obtained from the FMNH (private, email for use)
