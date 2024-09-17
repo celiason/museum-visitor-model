@@ -38,7 +38,7 @@ EXHIBITS had a large effect too, with around 400 more visitors on a given day.
 
 Maximum temperature showed an overall negative effect on visitors, but this effect was conditional on the time of week, among other factors. For example, on weekends, max. temperature doesn't really have any effect on visitor rates, but on weekdays there is a more pronounced effect with about 200 fewer visitors per day.
 
-![](figs/pdp_weekend_tmax.png)
+<!-- ![](figs/pdp_weekend_tmax.png) -->
 
 ## Author
 
