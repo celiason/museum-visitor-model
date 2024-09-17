@@ -2,7 +2,9 @@
 
 ## Intro
 
-This project looks at visitor data and social media timelines to predict lags/changes in visitor rates.
+This project looks at visitor data and social media timelines to predict lags/changes in visitor rates. Below is a figure showing changes in visitor rates over time.
+
+![](figs/visitors_bristol.png)
 
 ## Data sets
 
@@ -11,13 +13,6 @@ This project looks at visitor data and social media timelines to predict lags/ch
 
 ## Results
 
-I used random forest regression models implemented in the `sklearn` python module.
-
-The best model had an accuracy ($R^2$) of 87%, which is pretty good. You can see in the figure below that the model (red dashed line) is doing a pretty good job at predicting changes in the actual number of daily visitors over time (blue line).
-
-![Predicted Visitors](figs/visitors_predicted.png)
-**Figure 1:** Actual and predicted number of visitors to the Bristol Museum from 2015-2019.
-
 Using `TextBlob` in python, I also ran a model that predicted sentiment from the content of tweets from 2015-2019 (see code for scraping from X). Below is a wordcloud (generated with `wordcloud` module).
 
 ![](figs/wordcloud.png)
@@ -25,6 +20,11 @@ Using `TextBlob` in python, I also ran a model that predicted sentiment from the
 I averaged twitter sentiments by day and then plotted over time. You can see these data plotted below. There is a really big spike at the beginning of 2018 that corresponds to some negative press the Bristol Museum had from a Banksy piece being displayed.
 
 ![Twitter sentiment](figs/timeline_sentiment_bristol.png)
+
+I used random forest regression models implemented in the `sklearn` python module. The best model had an accuracy ($R^2$) of 87%, which is pretty good. You can see in the figure below that the model (red dashed line) is doing a pretty good job at predicting changes in the actual number of daily visitors over time (blue line).
+
+![Predicted Visitors](figs/visitors_predicted.png)
+**Figure 1:** Actual and predicted number of visitors to the Bristol Museum from 2015-2019.
 
 ## Insights
 
