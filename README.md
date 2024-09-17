@@ -28,7 +28,7 @@ I used random forest regression models implemented in the `sklearn` python modul
 
 ## Insights
 
-Using the random forest model, I found that the top 3 most important features that predict visitor numbers are weekend (0.20 importance), max. temperature (0.11), and whether there is a new exhibit on display (0.11).
+Using the random forest model, I found that the top 3 most important features that predict visitor numbers are WEEKEND (0.20 importance), maximum temperature TMAX (0.11), and whether there is a new EXHIBITS on display (0.11).
 
 The most important feature that predicts visitor numbers is WEEKEND, with about 700 more visitors per day. This makes sense given that kids are out of school, adults are not working, and people are just more interested in doing things on the weekend.
 
@@ -36,7 +36,7 @@ EXHIBITS had a large effect too, with around 400 more visitors on a given day.
 
 ![](figs/pdp_weekend.png)
 
-Maximum temperature showed an overall negative effect on visitors, but this effect was conditional on the time of week, among other factors. For example, on weekends, max. temperature doesn't really have any effect on visitor rates, but on weekdays there is a more pronounced effect with about 200 fewer visitors per day.
+TMAX showed an overall negative effect on visitors, but this effect was conditional on the time of week, among other factors. For example, on weekends, TMAX doesn't really have any effect on visitor rates, but on weekdays there is a more pronounced effect with about 200 fewer visitors per day.
 
 <!-- ![](figs/pdp_weekend_tmax.png) -->
 
