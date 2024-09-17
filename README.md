@@ -4,7 +4,7 @@
 
 This project looks at visitor data and social media timelines to predict lags/changes in visitor rates.
 
-![Predicted Visitors](images/visitors_predicted.png)
+![Predicted Visitors](figs/visitors_predicted.png)
 
 ## Data sets
 
