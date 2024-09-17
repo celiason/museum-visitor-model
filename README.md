@@ -1,15 +1,15 @@
 # Sentiment analysis and museums
 
-## Intro
-
-This project looks at visitor data and social media timelines to predict lags/changes in visitor rates. Below is a figure showing changes in visitor rates over time.
-
-![](figs/visitors_bristol.png)
-
 ## Data sets
 
 - Museum visitor data obtained from the Bristol Museum [](https://opendata.bristol.gov.uk)
 - Tweets containing "Bristol Museum" (see data/processed folder)
+
+## Intro
+
+This project looks at visitor data and social media timelines to predict lags/changes in visitor rates. Below is a figure showing changes in visitor rates over time. The drops to zero that become more common in 2018-2019 are cases where the museum is closed. I later used this feature to extract a ``closed`` variable for predicting visitors.
+
+![](figs/visitors_bristol.png)
 
 ## Results
 
