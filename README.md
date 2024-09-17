@@ -38,7 +38,17 @@ EXHIBITS had a large effect too, with around 400 more visitors on a given day.
 
 TMAX showed an overall negative effect on visitors, but this effect was conditional on the time of week, among other factors. For example, on weekends, TMAX doesn't really have any effect on visitor rates, but on weekdays there is a more pronounced effect with about 200 fewer visitors per day.
 
+The large jump in July 2015 corresponds to the opening of the Art Forms in Nature exhibit (LINK). Compared to other exhibition openings, this one was more profitable, possibly because it opened in the summer when TMAX was high and school as off.
+
 <!-- ![](figs/pdp_weekend_tmax.png) -->
+
+Assuming an average ticket cost of $xx, we can make predictions for the future:
+
+- To maximize profit, it would make sense to close the museum more frequently in the winter then TMIN is low (TMIN had a 0.08 important rating).
+
+- The number of tweets put out by the Bristol Museum had little effect on visitors (0.03 importance score), and there was a flatline after 5-10 tweets per day, suggesting that this would be an optimal number going forward to optimize time budgets (of social media staff, etc).
+
+- We can forecast overall revenue by calculating the area under the curve based on weather predictions and historic date. I predict $XX total revenue for 2025 based on my model.
 
 ## Author
 
