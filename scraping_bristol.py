@@ -83,5 +83,3 @@ scraper.scrape_tweets(
 )
 scraper.save_to_csv()
 rename_last_saved(folder="tweets", new_name="bristol_tweets_2019.csv")
-
-
