@@ -5,7 +5,7 @@
 This project looks at visitor data and social media timelines to predict lags/changes in visitor rates.
 
 ![Predicted Visitors](figs/visitors_predicted.png)
-**Figure 1:** Predicted number of visitors based on social media activity.
+**Figure 1:** Actual and predicted number of visitors to the Bristol Museum from 2015-2019.
 
 ## Data sets
 
