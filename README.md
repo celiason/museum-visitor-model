@@ -42,6 +42,8 @@ The large jump in July 2015 corresponds to the opening of the Art Forms in Natur
 
 <!-- ![](figs/pdp_weekend_tmax.png) -->
 
+## Recommendations
+
 Assuming an average ticket cost of $xx, we can make predictions for the future:
 
 - To maximize profit, it would make sense to close the museum more frequently in the winter then TMIN is low (TMIN had a 0.08 important rating).
