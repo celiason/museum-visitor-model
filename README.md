@@ -1,15 +1,27 @@
 # Sentiment analysis and museums
 
+## Overview
+
+This project looks at visitor data and social media timelines to predict lags/changes in visitor rates. Below is a figure showing changes in visitor rates over time. The drops to zero that become more common in 2018-2019 are cases where the museum is closed. I later used this feature to extract a ``closed`` variable for predicting visitors.
+
+![](figs/visitors_bristol.png)
+
 ## Data sets
 
 - Museum visitor data obtained from the Bristol Museum [](https://opendata.bristol.gov.uk)
 - Tweets containing "Bristol Museum" (see data/processed folder)
 
-## Intro
+## Solutions to tricky problems
 
-This project looks at visitor data and social media timelines to predict lags/changes in visitor rates. Below is a figure showing changes in visitor rates over time. The drops to zero that become more common in 2018-2019 are cases where the museum is closed. I later used this feature to extract a ``closed`` variable for predicting visitors.
+Closed dates - when visitors = 0 assume closed
 
-![](figs/visitors_bristol.png)
+Weather data had some NAs that I got around by using data imputation methods implemented in the `sklearn` module.
+
+The new X twitter API is prohibitively expensive, therefore I used [Selenium](https://github.com/godkingjay/selenium-twitter-scraper)
+
+Filtered out website links and common words not useful in calculating sentiment. Had to add "death" and "dead" to account for Death exhibit. 
+
+I calculated three social media metrics: engagements (likes + tweets + retweets), promotion (number of tweets put out by the Bristol Muuseum account), and sentiment (average sentiment value using a tokenized approach to tweet content)
 
 ## Results
 
@@ -51,6 +63,14 @@ Assuming an average ticket cost of $xx, we can make predictions for the future:
 - The number of tweets put out by the Bristol Museum had little effect on visitors (0.03 importance score), and there was a flatline after 5-10 tweets per day, suggesting that this would be an optimal number going forward to optimize time budgets (of social media staff, etc).
 
 - We can forecast overall revenue by calculating the area under the curve based on weather predictions and historic date. I predict $XX total revenue for 2025 based on my model.
+
+## Future directions
+
+Test this model with other museums
+
+Incorporate more features into the model
+
+Optimize the sentiment analysis as it was missing many cases (e.g., the Death exhibit often yielded negative sentiments although the exhibit received high praise and resulted in a jump in visitor rates).
 
 ## Author
 
