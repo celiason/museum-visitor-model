@@ -18,7 +18,11 @@ The best model had an accuracy ($R^2$) of 87%, which is pretty good. You can see
 ![Predicted Visitors](figs/visitors_predicted.png)
 **Figure 1:** Actual and predicted number of visitors to the Bristol Museum from 2015-2019.
 
-Using `TextBlob` in python, I also ran a model that predicted sentiment from the content of tweets from 2015-2019 (see code for scraping from X). You can see these data plotted below. There is a really big spike at the beginning of 2018 that corresponds to some negative press the Bristol Museum had from a Banksy piece being displayed.
+Using `TextBlob` in python, I also ran a model that predicted sentiment from the content of tweets from 2015-2019 (see code for scraping from X). Below is a wordcloud (generated with `wordcloud` module).
+
+![](figs/wordcloud.png)
+
+I averaged twitter sentiments by day and then plotted over time. You can see these data plotted below. There is a really big spike at the beginning of 2018 that corresponds to some negative press the Bristol Museum had from a Banksy piece being displayed.
 
 ![Twitter sentiment](figs/timeline_sentiment_bristol.png)
 
