@@ -28,6 +28,8 @@ Using the random forest model, I found that the top 3 most important features th
 
 The most important feature that predicts visitor numbers is WEEKEND, with about 700 more visitors per day. This makes sense given that kids are out of school, adults are not working, and people are just more interested in doing things on the weekend.
 
+![](figs/pdp_weekend.png)
+
 Maximum temperature showed an overall negative effect on visitors, but this effect was conditional on the time of week, among other factors. For example, on weekends, max. temperature doesn't really have any effect on visitor rates, but on weekdays there is a more pronounced effect with about 200 fewer visitors per day.
 
 ![](figs/pdp_weekend_tmax.png)
