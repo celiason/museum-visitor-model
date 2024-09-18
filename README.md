@@ -60,7 +60,7 @@ Another way to look at the data is with waterfall charts. These are commonly use
 
 Below is a waterfall chart for the day with the greatest number of visitors (August 22, 2015). The features are ordered by their effect on the baseline (0). We see that TMAX has the greatest effect (resulting in 1153.9 more visitors compared to the average). This makes sense if people are out and want to get out of the heat and into an air-conditioned space (the maximum tempeterature that day was 27.8 C or 82 F). It's also interesting to see that there was net positive sentiment on twitter that day that also contributed to ~66 more visitors.
 
-The ongoing special EXHIBIT "Death: The Human Experience" attracted another 536 visitors, and the fact that this day was a weekend brought in 528 more than average. The net effect of all the predictors was 2840.1 more visitors than baseline of 1127 visitors.
+The ongoing special exhibit "Death: The Human Experience" attracted another 536 visitors, and the fact that this day was a weekend brought in 528 more than average. The net effect of all the predictors was 2840.1 more visitors than baseline of 1127 visitors.
 
 ![](figs/waterfall_max.png)
 
@@ -69,7 +69,9 @@ The ongoing special EXHIBIT "Death: The Human Experience" attracted another 536 
 
 <!-- Assuming an average ticket cost of $xx, we can make predictions for the future: -->
 
-- To maximize visitor volume, it would make sense to close the museum more frequently in the winter then TMIN is low (TMIN had a 0.08 important rating).
+- To capitalize on potential revenue from high visitor volumes, it would make sense to plan exhibition openings and special events, discount food days etc. when summer peak temperatures are expected to be high (TMAX >28 C).
+
+- Although it is of course not surprising that museum closing was a strong predictor of visitor numbers in the model, to maximize visitor volume, it would make sense to close the museum more frequently in the spring then TMIN is low (TMIN had a 0.08 importance rating) and overall visitor numbers are decreased with kids back in school.
 
 - The number of tweets put out by the Bristol Museum had little effect on visitors (0.03 importance score), and there was a flatline after 5-10 tweets per day, suggesting that this would be an optimal number going forward to optimize time budgets (of social media staff, etc).
 
