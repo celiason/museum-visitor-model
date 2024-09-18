@@ -54,7 +54,9 @@ The large jump in July 2015 corresponds to the opening of the Art Forms in Natur
 
 <!-- ![](figs/pdp_weekend_tmax.png) -->
 
-Another way to look at the data is with waterfall charts. These are commonly used in the financial sector. Below is a waterfall chart for the day with the greatest number of visitors (August 22, 2018). The features are ordered by their effect on the baseline (0). We see that TMAX has the greatest effect (resulting in 1153.9 more visitors compared to the average), followed by the special EXHIBIT (536.4 more visitors) and the fact that this day was a weekend (bringing in 527.7 more visitors than average). The net effect of all the predictors was 2840.1 more visitors than baseline (which is 1127 visitors).
+Another way to look at the data is with waterfall charts. These are commonly used in the financial sector. Below is a waterfall chart for the day with the greatest number of visitors (August 22, 2018). The features are ordered by their effect on the baseline (0). We see that TMAX has the greatest effect (resulting in 1153.9 more visitors compared to the average). This makes sense if people are out and want to get out of the heat and into an air-conditioned space (the maximum tempeterature that day was 27.8 C or 82 F). It's also interesting to see that there was net positive sentiment on twitter that day that also contributed to ~66 more visitors.
+
+The ongoing special EXHIBIT "Death: The Human Experience" attracted another 536 visitors, and the fact that this day was a weekend brought in 528 more than average. The net effect of all the predictors was 2840.1 more visitors than baseline of 1127 visitors.
 
 ![](figs/waterfall_max.png)
 
