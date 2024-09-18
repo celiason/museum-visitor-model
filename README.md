@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project looks at visitor data and social media timelines to predict lags/changes in visitor rates. Below is a figure showing changes in visitor rates over time. The drops to zero that become more common in 2018-2019 are cases where the museum is closed. I later used this feature to extract a ``closed`` variable for predicting visitors.
+This project looks at visitor data and social media timelines to predict lags/changes in visitor rates. Below is a figure showing changes in visitor rates over time. The drops to zero that become more common in 2018-2019 are cases where the museum is closed. I later used this feature to extract a ``closed`` variable for predicting visitors. On average, there were 1125 visitors per day from 2015 - 2019.
 
 ![](figs/visitors_bristol.png)
 
@@ -24,10 +24,6 @@ Filtered out website links and common words not useful in calculating sentiment.
 I calculated three social media metrics: engagements (likes + tweets + retweets), promotion (number of tweets put out by the Bristol Muuseum account), and sentiment (average sentiment value using a tokenized approach to tweet content)
 
 ## Results
-
-On average, there are xx visitors per day from 2015 - 2019.
-
-
 
 Using `TextBlob` in python, I also ran a model that predicted sentiment from the content of tweets from 2015-2019 (see code for scraping from X). Below is a wordcloud (generated with `wordcloud` module).
 
