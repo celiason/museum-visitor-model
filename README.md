@@ -61,6 +61,10 @@ The large jump in July 2015 corresponds to the opening of the Art Forms in Natur
 
 <!-- ![](figs/pdp_weekend_tmax.png) -->
 
+It is interesting to look at the ineracting effects between precipitation (0.066) and windspeed (0.070 importance scores). On calm and rainy days, about 142 people come to the museum than on windy dry days. 
+
+![](figs/pdp_wspd_prcp.png)
+
 ## What makes a good day at the museum?
 
 Another way to look at the data is with waterfall charts. These are commonly used in the financial sector.
@@ -71,10 +75,7 @@ The ongoing special exhibit "Death: The Human Experience" attracted another 536 
 
 ![](figs/waterfall_max.png)
 
-
 ## Insights
-
-<!-- Assuming an average ticket cost of $xx, we can make predictions for the future: -->
 
 - To capitalize on potential revenue from high visitor volumes, it would make sense to plan exhibition openings and special events, discount food days etc. when summer peak temperatures are expected to be high (TMAX >28 C).
 
@@ -82,7 +83,10 @@ The ongoing special exhibit "Death: The Human Experience" attracted another 536 
 
 - The number of tweets put out by the Bristol Museum had little effect on visitors (0.03 importance score), and there was a flatline after 5-10 tweets per day, suggesting that this would be an optimal number going forward to optimize time budgets (of social media staff, etc).
 
-- We can forecast overall revenue by calculating the area under the curve based on weather predictions and historic date. Assuming a visitor purchases on average $xx in food and $xx in special exhibit tickets, I predict $XX total revenue for 2025 based on my model.
+- We can forecast overall revenue by calculating the area under the curve based on weather predictions and historic date. Assuming a visitor purchases on average $20 USD in food and $12 USD in special exhibit tickets, I predict $XX total revenue for 2025 based on my model.
+
+maybe 1/10 people buy a ticket??
+
 
 ## Future directions
 
