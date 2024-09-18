@@ -8,7 +8,7 @@
 
 ## Overview
 
-This project looks at visitor data and social media timelines to predict lags/changes in visitor rates. Below is a figure showing changes in visitor rates over time. The drops to zero that become more common in 2018-2019 are cases where the museum is closed. I later used this feature to extract a ``closed`` variable for predicting visitors. On average, there were 1125 visitors per day from 2015 - 2019.
+This project looks at visitor data and social media timelines to predict lags/changes in visitor rates. Below is a plot showing changes in the number of visitors over time. The drops to zero that become more common in 2018-2019 are cases where the museum is closed (more on that below). On average, there were 1125 visitors per day from Apr 2015 - Feb 2019, the extent of the dataset.
 
 ![](figs/visitors_bristol.png)
 
@@ -42,10 +42,9 @@ One potential problem with predicting future visitor numbers with my model is th
 
 ## Modeling visitor rates
 
-I used random forest regression models implemented in the `sklearn` python module. The best model had an accuracy ($R^2$) of 87%, which is pretty good. You can see in the figure below that the model (red dashed line) is doing a pretty good job at predicting changes in the actual number of daily visitors over time (blue line).
+I used random forest regression models implemented in the `sklearn` python module. The best model had an accuracy ($R^2$) of 87%, which is pretty good. You can see in the plot below that the model (red dashed line) is doing a pretty good job at predicting changes in the actual number of daily visitors over time (blue line).
 
 ![Predicted Visitors](figs/visitors_predicted.png)
-**Figure 1:** Actual and predicted number of visitors to the Bristol Museum from 2015-2019.
 
 Using the random forest model, I found that the top 3 most important features that predict visitor numbers are WEEKEND (0.20 importance), maximum temperature TMAX (0.11), and whether there is a new EXHIBIT on display (0.11).
 
