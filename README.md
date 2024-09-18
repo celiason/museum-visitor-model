@@ -4,6 +4,7 @@
 
 - Museum visitor data obtained from the Bristol Museum [](https://opendata.bristol.gov.uk)
 - Tweets containing "Bristol Museum" (see data/processed folder)
+- Weather data downloaded using `meteostat`
 
 ## Overview
 
@@ -21,26 +22,23 @@ To understand the importance of public perception on museum visitor rates, I cal
 2. Engagement - the number of user tweets, retweets, and likes
 3. Sentiment - the average sentiment value of user tweets
 
-To calculate sentiment, I used the `TextBlob` in python to predict sentiment from the content of user tweets between 2015-2019. Below is a wordcloud (generated with `wordcloud` module).
+To calculate sentiment, I used the `TextBlob` in python to predict sentiment from the content of user tweets between 2015-2019. Below is a wordcloud (generated with the `wordcloud` module in python).
 
 ![](figs/wordcloud.png)
 
-I averaged twitter sentiments by day and then plotted over time. You can see these data plotted below. There is a really big spike at the beginning of 2018 that corresponds to some negative press the Bristol Museum had from a Banksy piece being displayed.
+I averaged twitter sentiments by day and then plotted over time. You can see these data plotted below. There is a really big spike at the beginning of 2018 that corresponds to some negative press the Bristol Museum had over an apparent dispute of the display of a Banksy piece.
 
 ![Twitter sentiment](figs/timeline_sentiment_bristol.png)
 
-## Solutions to tricky problems
+## Challenges with the data
 
-Caveats
+Filtered out website links and common words not useful in calculating sentiment. In many cases, tweets with negative sentiment had the word "death" in them. Most of these tweets were actually positive and related to the Death exhibit in 2015. To fix this, I added "death" to the list of stop words prior to sentiment analysis with `TextBlob`. 
 
+Some of the days hade missing weather data. I got around this challenge by using data imputation methods implemented in the `sklearn` module (see Jupyter notebook for details).
 
-Closed dates - when visitors = 0 assume closed
+Several drops in visitor rates were due to the musem being closed. This allowed me to create a categorical variable (closed or open) by determining whether visitor numbers were zero for a given day.
 
-Weather data had some NAs that I got around by using data imputation methods implemented in the `sklearn` module.
-
-Filtered out website links and common words not useful in calculating sentiment. Had to add "death" and "dead" to account for Death exhibit. 
-
-I calculated three social media metrics: engagements (likes + tweets + retweets), promotion (number of tweets put out by the Bristol Muuseum account), and sentiment (average sentiment value using a tokenized approach to tweet content)
+One potential problem with predicting future visitor numbers with my model is that the model might only be relevant for a given year (or set of years). To rule this out, I fit a random forest regression model with year as a predictor and found that this variable was insignificant (all importance values < 0.03) in explaining variation in visitor numbers among years. This increased my confidence that the model is relevant for current (and future) visitor numbers at the Bristol Museum.
 
 ## Modeling visitor rates
 
