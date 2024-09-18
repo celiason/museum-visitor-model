@@ -13,7 +13,15 @@ This project looks at visitor data and social media timelines to predict lags/ch
 
 ## Twitter results
 
-Using `TextBlob` in python, I also ran a model that predicted sentiment from the content of tweets from 2015-2019 (see code for scraping from X). Below is a wordcloud (generated with `wordcloud` module).
+The new X twitter API is prohibitively expensive, therefore I used [Selenium](https://github.com/godkingjay/selenium-twitter-scraper) to scrape tweets from twitter between 2015 and 2019 (see `scraping_brisol.py` and `scraper/` for code used). In total, I obtained __6281__ tweets from 2015 - 2019. Of those, __3133__ were put out by the museum and __3148__ were tweeted by other twitter handles.
+
+To understand the importance of public perception on museum visitor rates, I calculated three metrics:
+
+1. Promotion - the number of museum tweets
+2. Engagement - the number of user tweets, retweets, and likes
+3. Sentiment - the average sentiment value of user tweets
+
+To calculate sentiment, I used the `TextBlob` in python to predict sentiment from the content of user tweets between 2015-2019. Below is a wordcloud (generated with `wordcloud` module).
 
 ![](figs/wordcloud.png)
 
@@ -23,11 +31,12 @@ I averaged twitter sentiments by day and then plotted over time. You can see the
 
 ## Solutions to tricky problems
 
+Caveats
+
+
 Closed dates - when visitors = 0 assume closed
 
 Weather data had some NAs that I got around by using data imputation methods implemented in the `sklearn` module.
-
-The new X twitter API is prohibitively expensive, therefore I used [Selenium](https://github.com/godkingjay/selenium-twitter-scraper)
 
 Filtered out website links and common words not useful in calculating sentiment. Had to add "death" and "dead" to account for Death exhibit. 
 
