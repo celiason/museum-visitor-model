@@ -61,7 +61,7 @@ The large jump in July 2015 corresponds to the opening of the Art Forms in Natur
 
 <!-- ![](figs/pdp_weekend_tmax.png) -->
 
-It is interesting to look at the ineracting effects between precipitation (0.066) and windspeed (0.070 importance scores). On calm and rainy days, about 142 people come to the museum than on windy dry days. 
+It is interesting to look at the ineracting effects between precipitation (0.066) and windspeed (0.070 importance scores). The partial dependence plot shown below suggest that about 142 more people come to the museum on calm and rainy days than on windy dry days.
 
 ![](figs/pdp_wspd_prcp.png)
 
