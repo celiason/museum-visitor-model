@@ -1,5 +1,18 @@
 # Sentiment analysis and museums
 
+## Table of contents
+
+- [Data sets](#data-sets)
+- [Overview](#overview)
+- [Twitter results](#twitter-results)
+- [Challenges with the data](#challenges-with-the-data)
+- [Modeling visitor rates](#modeling-visitor-rates)
+- [Rain, rain, go away](#rain-rain-go-away)
+- [What makes a good day at the museum?](#what-makes-a-good-day-at-the-museum)
+- [Insights](#insights)
+- [Future directions](#future-directions)
+- [Author](#author)
+
 ## Data sets
 
 - Museum visitor data obtained from the Bristol Museum [](https://opendata.bristol.gov.uk)
