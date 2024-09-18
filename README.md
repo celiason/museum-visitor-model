@@ -8,7 +8,7 @@
 
 ## Overview
 
-This project looks at visitor data and social media timelines to predict lags/changes in visitor rates. Below is a plot showing changes in the number of visitors over time. The drops to zero that become more common in 2018-2019 are cases where the museum is closed (more on that below). On average, there were 1125 visitors per day from Apr 2015 - Feb 2019, the extent of the dataset.
+This project looks at visitor data and social media timelines to predict lags/changes in visitor rates. Below is a plot showing changes in the number of visitors over time. The drops to zero that become more common in 2018-2019 are cases where the museum is closed (more on that below). On average, there were 1125 visitors per day from Apr 2015 - Feb 2019, the extent of the dataset. Among full years, the greatest number of visitors came to the museum in 2018 (416k) and the fewest came in 2016 (346k). 
 
 ![](figs/visitors_bristol.png)
 
@@ -26,7 +26,7 @@ To calculate sentiment, I used the `TextBlob` in python to predict sentiment fro
 
 ![](figs/wordcloud.png)
 
-I averaged twitter sentiments by day and then plotted over time. You can see these data plotted below. There is a really big spike at the beginning of 2018 that corresponds to some negative press the Bristol Museum had over an apparent dispute of the display of a Banksy piece.
+I averaged twitter sentiments by day and then plotted over time. You can see these data plotted below. There is a really big spike at the beginning of 2018 that corresponds to some negative press the Bristol Museum had over an apparent dispute of the display of a Banksy piece (see news article [here](https://www.bbc.com/news/uk-england-bristol-42708000)).
 
 ![Twitter sentiment](figs/timeline_sentiment_bristol.png)
 
