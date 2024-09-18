@@ -61,7 +61,7 @@ The large jump in July 2015 corresponds to the opening of the Art Forms in Natur
 
 <!-- ![](figs/pdp_weekend_tmax.png) -->
 
-It is interesting to look at the ineracting effects between precipitation (0.066) and windspeed (0.070 importance scores). The partial dependence plot shown below suggest that about 142 more people come to the museum on calm and rainy days than on windy dry days.
+It is interesting to look at the ineracting effects between precipitation (0.066) and windspeed (0.070 importance scores). The partial dependence plot shown below suggest that about 142 more people come to the museum on calm, rainy days than on windy, dry days.
 
 ![](figs/pdp_wspd_prcp.png)
 
@@ -83,11 +83,6 @@ The ongoing special exhibit "Death: The Human Experience" attracted another 536 
 
 - The number of tweets put out by the Bristol Museum had little effect on visitors (0.03 importance score), and there was a flatline after 5-10 tweets per day, suggesting that this would be an optimal number going forward to optimize time budgets (of social media staff, etc).
 
-- We can forecast overall revenue by calculating the area under the curve based on weather predictions and historic date. Assuming a visitor purchases on average $20 USD in food and $12 USD in special exhibit tickets, I predict $XX total revenue for 2025 based on my model.
-
-maybe 1/10 people buy a ticket??
-
-
 ## Future directions
 
 I can test this model with visitor data from other large museums
@@ -95,6 +90,10 @@ I can test this model with visitor data from other large museums
 Incorporate more features into the model
 
 Optimize the sentiment analysis as it was missing many cases (e.g., the Death exhibit often yielded negative sentiments although the exhibit received high praise and resulted in a jump in visitor rates).
+
+Forecast overall revenue by calculating the area under the curve based on weather predictions and historic date. Assuming a visitor purchases on average $20 USD in food and $12 USD in special exhibit tickets, I predict $XX total revenue for 2025 based on my model.
+
+<!-- maybe 1/10 people buy a ticket?? -->
 
 ## Author
 
