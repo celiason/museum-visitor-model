@@ -32,33 +32,35 @@ I averaged twitter sentiments by day and then plotted over time. You can see the
 
 ## Challenges with the data
 
-Filtered out website links and common words not useful in calculating sentiment. In many cases, tweets with negative sentiment had the word "death" in them. Most of these tweets were actually positive and related to the Death exhibit in 2015. To fix this, I added "death" to the list of stop words prior to sentiment analysis with `TextBlob`. 
+I filtered out website links and common words not useful in calculating sentiment. In many cases, tweets with negative sentiment had the word "death" in them. Most of these tweets were actually positive and related to the Death exhibit in 2015. To fix this, I added "death" to the list of stop words prior to sentiment analysis with `TextBlob`. 
 
 Some of the days hade missing weather data. I got around this challenge by using data imputation methods implemented in the `sklearn` module (see Jupyter notebook for details).
 
-Several drops in visitor rates were due to the musem being closed. This allowed me to create a categorical variable (closed or open) by determining whether visitor numbers were zero for a given day.
+Several drops in visitor numbers were due to the musem being closed. This allowed me to create a categorical variable (closed or open) by determining whether visitor numbers were zero for a given day.
 
-One potential problem with predicting future visitor numbers with my model is that the model might only be relevant for a given year (or set of years). To rule this out, I fit a random forest regression model with year as a predictor and found that this variable was insignificant (all importance values < 0.03) in explaining variation in visitor numbers among years. This increased my confidence that the model is relevant for current (and future) visitor numbers at the Bristol Museum.
+One potential problem with predicting future visitor numbers is that my model might only be relevant for a given year (or set of years). To rule this out, I fit a random forest regression model with year as a predictor and found that this variable was insignificant (all importance values < 0.03) in explaining variation in visitor numbers among years. This increased my confidence that the model is relevant for current (and future) visitor numbers at the Bristol Museum.
 
 ## Modeling visitor rates
 
-I used random forest regression models implemented in the `sklearn` python module. The best model had an accuracy ($R^2$) of 87%, which is pretty good. You can see in the plot below that the model (red dashed line) is doing a pretty good job at predicting changes in the actual number of daily visitors over time (blue line).
+I used random forest regression models implemented in the `sklearn` python module. The best model had an $R^2$ scores of 0.869. This means that the model can predict the number of visitors with about 87% accuracy, which is pretty darn good. You can see in the plot below that the model (red dashed line) is doing a pretty good job at tracking the actual number of daily visitors over time (blue line).
 
 ![Predicted Visitors](figs/visitors_predicted.png)
 
-Using the random forest model, I found that the top 3 most important features that predict visitor numbers are WEEKEND (0.20 importance), maximum temperature TMAX (0.11), and whether there is a new EXHIBIT on display (0.11).
+Using the random forest regression model, I found that the top 3 most important features that predict visitor numbers are weekends (importance score = 0.198), maximum temperature (importance score = 0.110), and whether there was a new exhibit on display (importance score = 0.107).
 
-The most important feature that predicts visitor numbers is WEEKEND, with about 700 more visitors per day. This makes sense given that kids are out of school, adults are not working, and people are just more interested in doing things on the weekend.
+The most important feature that predicts visitor numbers is weekends, with about 700 more visitors attending the museum per weekend day. This makes sense given that kids are out of school, adults are not working, and people are probably just more interested in doing things on the weekend.
 
-EXHIBIT had a large effect too, attracing around 400 more visitors per day.
+The display of special exhibits also had a large effect, attracing around 400 more visitors per day.
 
 ![](figs/pdp_weekend.png)
 
-TMAX showed an overall negative effect on visitors, but this effect was conditional on the time of week, among other factors. For example, on weekends, TMAX doesn't really have any effect on visitor rates, but on weekdays there is a more pronounced effect with about 200 fewer visitors per day.
-
-The large jump in July 2015 corresponds to the opening of the Art Forms in Nature exhibit (LINK). Compared to other exhibition openings, this one was more profitable, possibly because it opened in the summer when TMAX was high and school as off.
+Maximum daily temperature (TMAX) showed an overall negative effect on visitors, but this effect was conditional on the time of week, among other factors. For example, on weekends, TMAX doesn't really have any effect on visitor rates, but on weekdays there is a more pronounced effect with about 200 fewer visitors per day.
 
 <!-- ![](figs/pdp_weekend_tmax.png) -->
+
+The large jump in Jul 2015 (see plot above) corresponds to the opening of the Art Forms in Nature exhibit. Compared to other exhibition openings, this one was more profitable, possibly because it opened in the summer when TMAX was high and school as off.
+
+## Rain, rain, go away
 
 It is interesting to look at the ineracting effects between precipitation (0.066) and windspeed (0.070 importance scores). The partial dependence plot shown below suggest that about 142 more people come to the museum on calm, rainy days than on windy, dry days.
 
