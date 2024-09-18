@@ -69,11 +69,11 @@ The ongoing special EXHIBIT "Death: The Human Experience" attracted another 536 
 
 - The number of tweets put out by the Bristol Museum had little effect on visitors (0.03 importance score), and there was a flatline after 5-10 tweets per day, suggesting that this would be an optimal number going forward to optimize time budgets (of social media staff, etc).
 
-- We can forecast overall revenue by calculating the area under the curve based on weather predictions and historic date. I predict $XX total revenue for 2025 based on my model.
+- We can forecast overall revenue by calculating the area under the curve based on weather predictions and historic date. Assuming a visitor purchases on average $xx in food and $xx in special exhibit tickets, I predict $XX total revenue for 2025 based on my model.
 
 ## Future directions
 
-Test this model with other museums
+I can test this model with visitor data from other large museums
 
 Incorporate more features into the model
 
