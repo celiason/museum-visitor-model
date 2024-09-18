@@ -25,6 +25,10 @@ I calculated three social media metrics: engagements (likes + tweets + retweets)
 
 ## Results
 
+On average, there are xx visitors per day from 2015 - 2019.
+
+
+
 Using `TextBlob` in python, I also ran a model that predicted sentiment from the content of tweets from 2015-2019 (see code for scraping from X). Below is a wordcloud (generated with `wordcloud` module).
 
 ![](figs/wordcloud.png)
@@ -40,11 +44,11 @@ I used random forest regression models implemented in the `sklearn` python modul
 
 ## Insights
 
-Using the random forest model, I found that the top 3 most important features that predict visitor numbers are WEEKEND (0.20 importance), maximum temperature TMAX (0.11), and whether there is a new EXHIBITS on display (0.11).
+Using the random forest model, I found that the top 3 most important features that predict visitor numbers are WEEKEND (0.20 importance), maximum temperature TMAX (0.11), and whether there is a new EXHIBIT on display (0.11).
 
 The most important feature that predicts visitor numbers is WEEKEND, with about 700 more visitors per day. This makes sense given that kids are out of school, adults are not working, and people are just more interested in doing things on the weekend.
 
-EXHIBITS had a large effect too, with around 400 more visitors on a given day.
+EXHIBIT had a large effect too, attracing around 400 more visitors per day.
 
 ![](figs/pdp_weekend.png)
 
@@ -54,11 +58,16 @@ The large jump in July 2015 corresponds to the opening of the Art Forms in Natur
 
 <!-- ![](figs/pdp_weekend_tmax.png) -->
 
+Another way to look at the data is with waterfall charts. These are commonly used in the financial sector. Below is a waterfall chart for the day with the greatest number of visitors (August 22, 2018). The features are ordered by their effect on the baseline (0). We see that TMAX has the greatest effect (resulting in 1153.9 more visitors compared to the average), followed by the special EXHIBIT (536.4 more visitors) and the fact that this day was a weekend (bringing in 527.7 more visitors than average). The net effect of all the predictors was 2840.1 more visitors than baseline (which is 1127 visitors).
+
+![](figs/waterfall_max.png)
+
+
 ## Recommendations
 
-Assuming an average ticket cost of $xx, we can make predictions for the future:
+<!-- Assuming an average ticket cost of $xx, we can make predictions for the future: -->
 
-- To maximize profit, it would make sense to close the museum more frequently in the winter then TMIN is low (TMIN had a 0.08 important rating).
+- To maximize visitor volume, it would make sense to close the museum more frequently in the winter then TMIN is low (TMIN had a 0.08 important rating).
 
 - The number of tweets put out by the Bristol Museum had little effect on visitors (0.03 importance score), and there was a flatline after 5-10 tweets per day, suggesting that this would be an optimal number going forward to optimize time budgets (of social media staff, etc).
 
