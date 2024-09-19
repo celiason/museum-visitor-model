@@ -1,9 +1,9 @@
 import os
 import sys
 import pandas as pd
-from scraper.progress import Progress
-from scraper.scroller import Scroller
-from scraper.tweet import Tweet
+from selenium_scraper.progress import Progress
+from selenium_scraper.scroller import Scroller
+from selenium_scraper.tweet import Tweet
 
 from datetime import datetime
 from fake_headers import Headers
@@ -534,14 +534,15 @@ It may be due to the following:
 
         pass
 
-    def save_to_csv(self):
-        print("Saving Tweets to CSV...")
-        now = datetime.now()
-        folder_path = "./tweets/"
+    def save_to_csv(self, file_path):
 
-        if not os.path.exists(folder_path):
-            os.makedirs(folder_path)
-            print("Created Folder: {}".format(folder_path))
+        print("Saving Tweets to CSV...")
+        # now = datetime.now()
+        # folder_path = "./tweets/"
+
+        # if not os.path.exists(folder_path):
+        #     os.makedirs(folder_path)
+        #     print("Created Folder: {}".format(folder_path))
 
         data = {
             "Name": [tweet[0] for tweet in self.data],
@@ -568,8 +569,8 @@ It may be due to the following:
 
         df = pd.DataFrame(data)
 
-        current_time = now.strftime("%Y-%m-%d_%H-%M-%S")
-        file_path = f"{folder_path}{current_time}_tweets_1-{len(self.data)}.csv"
+        # current_time = now.strftime("%Y-%m-%d_%H-%M-%S")
+        # file_path = f"{folder_path}{current_time}_tweets_1-{len(self.data)}.csv"        
         pd.set_option("display.max_colwidth", None)
         df.to_csv(file_path, index=False, encoding="utf-8")
 

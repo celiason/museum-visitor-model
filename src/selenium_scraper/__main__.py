@@ -2,7 +2,7 @@ import os
 import sys
 import argparse
 import getpass
-from twitter_scraper import Twitter_Scraper
+from selenium_scraper.twitter_scraper import Twitter_Scraper
 
 try:
     from dotenv import load_dotenv

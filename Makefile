@@ -27,7 +27,7 @@ requirements:
 
 # Get tweet data from Bristol Museum
 tweets: data/interim/bristol_tweets_2015_2019.csv
-	$(PYTHON_INTERPRETER) src/data/scrape_tweets.py
+	$(PYTHON_INTERPRETER) src/scrape_tweets.py
 
 ## EXTERNAL DATASETS
 
