@@ -39,3 +39,8 @@ climate: data/raw/meteostat_lyneham.csv
 visitors: data/raw/bristol_visitors.csv
 	curl -o data/raw/bristol_visitors.csv 'https://hub.arcgis.com/api/v3/datasets/98d95d36536343eca59e6e4bb04c58b7_0/downloads/data?format=csv&spatialRefId=4326&where=1%3D1'
 
+
+## PLOTS
+
+plots:
+	$(PYTHON_INTERPRETER) src/plotting.py
