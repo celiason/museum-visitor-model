@@ -32,8 +32,6 @@ tweets: data/interim/bristol_tweets_2015_2019.csv
 ## EXTERNAL DATASETS
 
 # Download climate data
-# NB: thing after the colon is what we check for
-# if the data is already there, the next part (shouldn't) run
 climate: data/raw/meteostat_lyneham.csv
 	$(PYTHON_INTERPRETER) src/data/get_climate.py
 

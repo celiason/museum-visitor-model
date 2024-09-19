@@ -11,17 +11,17 @@ start = datetime(2014, 1, 1)
 end = datetime(2019, 12, 31)
 
 # Set location for Bristol
-# lat = 51.454514
-# lon = -2.587910
-# alt = 36 # feet
+lat = 51.454514
+lon = -2.587910
+alt = 36 # feet
 
 # Create Point for Bristol
-# bristol = Point(lat, lon, alt)
+bristol = Point(lat, lon, alt)
 
 # Get daily data for 2014-2019 in Bristol
-# data = Daily(bristol, start, end)
-# data = data.fetch()
-# data.to_csv('data/raw/meteostat_bristol.csv')
+data = Daily(bristol, start, end)
+data = data.fetch()
+data.to_csv('data/raw/meteostat_bristol.csv')
 
 # NB: this location didn't have precip data, so I'm going to try a different location-
 
