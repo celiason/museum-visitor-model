@@ -1,0 +1,2 @@
+scraper/** linguist-vendored
+*.ipynb linguist-language=Python
