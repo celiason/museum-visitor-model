@@ -1,2 +1,3 @@
 scraper/** linguist-vendored
-*.ipynb linguist-language=Python
+# *.ipynb linguist-language=Python
+.ipynb linguist-vendored
