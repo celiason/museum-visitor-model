@@ -21,7 +21,7 @@
 
 ## Overview
 
-This project looks at visitor data and social media timelines to predict lags/changes in visitor rates. Below is a plot showing changes in the number of visitors over time. The drops to zero that become more common in 2018-2019 are cases where the museum is closed (more on that below). On average, there were 1125 visitors per day from Apr 2015 - Feb 2019, the extent of the dataset. Among full years, the greatest number of visitors came to the museum in 2018 (416k) and the fewest came in 2016 (346k). 
+This project looks at visitor data and social media timelines to predict lags/changes in visitor rates. Below is a plot showing changes in the number of visitors over time. The drops to zero that become more common in 2018-2019 are cases where the museum is closed (more on that below). On average, there were 1125 visitors per day from Apr 2015 - Feb 2019, the extent of the dataset. Among full years, the greatest number of visitors came to the museum in 2018 (416k) and the fewest came in 2016 (346k).
 
 ![](figs/visitors_bristol.png)
 
