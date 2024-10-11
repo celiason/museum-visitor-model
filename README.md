@@ -9,8 +9,8 @@
 - [Twitter scraping and analysis](#twitter-scraping-and-analysis)
 - [Modeling visitor rates](#modeling-visitor-rates)
 - [Drawing insights from the model](#drawing-insights-from-the-model)
-- [Rain, rain, don't go away?](#rain-rain-dont-go-away)
-- [What makes a good day at the museum?](#what-makes-a-good-day-at-the-museum)
+    - [Rain, rain, don't go away?](#rain-rain-dont-go-away)
+    - [What makes a good day at the museum?](#what-makes-a-good-day-at-the-museum)
 - [Future directions](#future-directions)
 - [Author](#author)
 
@@ -88,12 +88,12 @@ Twitter engagement predicted museum visitor numbers more strongly in the summer 
 
 ![](figs/pdp_summer_engagement.png)
 
-## Rain, rain, don't go away?
+### Rain, rain, don't go away?
 It is interesting to look at the ineracting effects between precipitation and windspeed. The partial dependence plot shown below suggest that around 150 more people come to the museum on windy, rainy days than on calm, dry days. This makes sense if people are looking to get out of the elements. The museum can capitalize on this effect by potentially offering discounts for exhibits and food on those days to capitalize on the increased number of visitors.
 
 ![](figs/pdp_wspd_prcp.png)
 
-## What makes a good day at the museum?
+### What makes a good day at the museum?
 Another way to look at the data is with waterfall chart, commonly used in the financial sector. Below is a waterfall chart for the day with the greatest number of visitors (August 22, 2015). The features are ordered by their effect on the baseline (0). We see that weekly (7-day) lag has the greatest effect (resulting in 856 more visitors compared to the average). The second most important predictor is maximum temperature. This makes sense if people are out in the parks and want to escape from the heat into an air-conditioned space (the maximum tempeterature that day was 27.8 ºC, or 82 ºF). It's also interesting to see that there was net positive sentiment on twitter that day that also contributed to ~100 more visitors. The ongoing special exhibit "Death: The Human Experience" attracted another 140 visitors. The net effect of all predictors was 3112 more visitors than the average baseline of 1127 visitors.
 
 ![](figs/waterfall_max.png)
