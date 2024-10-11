@@ -55,27 +55,21 @@ One potential problem with predicting future visitor numbers is that my model mi
 
 ## Modeling visitor rates
 
-I used random forest regression models implemented in the `sklearn` python module. The best model had an $R^2$ scores of 0.869. This means that the model can predict the number of visitors with about 87% accuracy, which is pretty darn good. You can see in the plot below that the model (red dashed line) is doing a pretty good job at tracking the actual number of daily visitors over time (blue line).
+I used random forest regression models implemented in the `sklearn` python module. The best model fit the training data well, with an $R^2$ score of 0.91 (see blue line in the plot below). The model also predicted test data well, with $R^2$ = 0.74. The mean absolute error (MAE) of the test predictions was 253, indicating that the model accurately predicts daily museums numbers to within ~250 visitors per day. You can see in the plot below that the model (dark line) is doing a pretty good job at tracking the actual number of daily visitors over time (faded line). The large jump in July 2015 corresponds to the opening of the _Art Forms in Nature_ exhibit. Compared to other exhibition openings, this one was more profitable, possibly because it opened in the summer when temperatures were high (see below) and school as off.
 
-![Predicted Visitors](figs/visitors_predicted.png)
+![Predicted Visitors](figs/visitors_testing.png)
 
-Using the random forest regression model, I found that the top 3 most important features that predict visitor numbers are weekends (importance score = 0.198), maximum temperature (importance score = 0.110), and whether there was a new exhibit on display (importance score = 0.107).
-
-The most important feature that predicts visitor numbers is weekends, with about 700 more visitors attending the museum per weekend day. This makes sense given that kids are out of school, adults are not working, and people are probably just more interested in doing things on the weekend.
-
-The display of special exhibits also had a large effect, attracing around 400 more visitors per day.
+Using the random forest regression model, I found that the top-5 most important features that predict visitor numbers are: daily lag (importance score = 0.26), weekly lag (0.19), Saturdays (0.09), weekeneds (0.06), and maximum temperature (0.05). The weekend effect makes sense since kids are out of school, adults are not working, and people are probably just more interested in doing things on the weekend. It is interesting to see that weekend interacts with exhibit displays, as exhibits also had a substantial effect, attracing around 100 visitors per day over the average.
 
 ![](figs/pdp_weekend.png)
 
-Maximum daily temperature (TMAX) showed an overall negative effect on visitors, but this effect was conditional on the time of week, among other factors. For example, on weekends, TMAX doesn't really have any effect on visitor rates, but on weekdays there is a more pronounced effect with about 200 fewer visitors per day.
+Maximum daily temperature (TMAX) showed an overall negative effect on visitors, but this effect was somewhat conditional on the time of week. For example, on weekends, TMAX doesn't really have any effect on visitor rates, but on weekdays there is a more pronounced effect with about 200 fewer visitors per day.
 
-<!-- ![](figs/pdp_weekend_tmax.png) -->
+![](figs/pdp_weekend_tmax.png)
 
-The large jump in Jul 2015 (see plot above) corresponds to the opening of the Art Forms in Nature exhibit. Compared to other exhibition openings, this one was more profitable, possibly because it opened in the summer when TMAX was high and school as off.
+## Rain, rain, don't go away?
 
-## Rain, rain, go away
-
-It is interesting to look at the ineracting effects between precipitation (0.066) and windspeed (0.070 importance scores). The partial dependence plot shown below suggest that about 142 more people come to the museum on calm, rainy days than on windy, dry days.
+It is interesting to look at the ineracting effects between precipitation and windspeed. The partial dependence plot shown below suggest that around 150 more people come to the museum on windy, rainy days than on calm, dry days. This makes sense if people are looking to get out of the elements. The museum can capitalize on this effect by potentially offering discounts for exhibits and food on those days to capitalize on the increased number of visitors.
 
 ![](figs/pdp_wspd_prcp.png)
 
@@ -83,9 +77,7 @@ It is interesting to look at the ineracting effects between precipitation (0.066
 
 Another way to look at the data is with waterfall charts. These are commonly used in the financial sector.
 
-Below is a waterfall chart for the day with the greatest number of visitors (August 22, 2015). The features are ordered by their effect on the baseline (0). We see that TMAX has the greatest effect (resulting in 1154 more visitors compared to the average). This makes sense if people are out and want to get out of the heat and into an air-conditioned space (the maximum tempeterature that day was 27.8 C or 82 F). It's also interesting to see that there was net positive sentiment on twitter that day that also contributed to ~66 more visitors.
-
-The ongoing special exhibit "Death: The Human Experience" attracted another 536 visitors, and the fact that this day was a weekend brought in 528 more than average. The net effect of all the predictors was 2840 more visitors than baseline of 1127 visitors.
+Below is a waterfall chart for the day with the greatest number of visitors (August 22, 2015). The features are ordered by their effect on the baseline (0). We see that weekly (7-day) lag has the greatest effect (resulting in 856 more visitors compared to the average). The second most important predictor is maximum temperature. This makes sense if people are out in the parks and want to escape from the heat into an air-conditioned space (the maximum tempeterature that day was 27.8 ºC, or 82 ºF). It's also interesting to see that there was net positive sentiment on twitter that day that also contributed to ~100 more visitors. The ongoing special exhibit "Death: The Human Experience" attracted another 140 visitors. The net effect of all predictors was 3112 more visitors than the average baseline of 1127 visitors.
 
 ![](figs/waterfall_max.png)
 

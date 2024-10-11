@@ -23,13 +23,11 @@ requirements:
 
 # then I can run `make requirements` in shell to install the requirements!
 
-## SCRAPING TWEETS
+## DATASETS
 
 # Get tweet data from Bristol Museum
 tweets: data/interim/bristol_tweets_2015_2019.csv
 	$(PYTHON_INTERPRETER) src/scrape_tweets.py
-
-## EXTERNAL DATASETS
 
 # Download climate data
 climate: data/raw/meteostat_lyneham.csv
@@ -38,7 +36,6 @@ climate: data/raw/meteostat_lyneham.csv
 # Download visitor data
 visitors: data/raw/bristol_visitors.csv
 	curl -o data/raw/bristol_visitors.csv 'https://hub.arcgis.com/api/v3/datasets/98d95d36536343eca59e6e4bb04c58b7_0/downloads/data?format=csv&spatialRefId=4326&where=1%3D1'
-
 
 ## PLOTS
 
