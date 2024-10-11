@@ -3,7 +3,7 @@
 ## Table of contents
 
 - [Summary](#summary)
-- [Data sets](#data-sets)
+- [Data used](#data-used)
 - [Feature engineering](#feature-engineering)
 - [Challenges with the data](#challenges-with-the-data)
 - [Twitter scraping and analysis](#twitter-scraping-and-analysis)
@@ -23,14 +23,13 @@ This project looks at visitor data and social media timelines to predict changes
 
 3. The number of tweets put out by the Bristol Museum had little effect on visitors, and there was a flatline after 5-10 tweets per day, suggesting that this would be an optimal number going forward to optimize time budgets (of social media staff, etc)
 
-## Data sets
-- Museum visitor data obtained from the Bristol Museum [](https://opendata.bristol.gov.uk)
-- Tweets containing "Bristol Museum" (see data/processed folder)
-- Weather data downloaded using `meteostat`
-
 ![](figs/visitors_bristol.png)
 Above is a plot showing changes in the number of visitors over time. The drops to zero that become more common in 2018-2019 are cases where the museum is closed (more on that later). 
 
+## Data used
+- Museum visitor data obtained from the Bristol Museum [](https://opendata.bristol.gov.uk)
+- Tweets containing "Bristol Museum" (see data/processed folder)
+- Weather data downloaded using `meteostat`
 
 ## Feature engineering
 - Lag (daily, weekly): I used the `shift` function to obtain daily (shift 1) and weekly lags (shift 7). This was to account for the effect of previous day or week numbers on the current days' visitors
