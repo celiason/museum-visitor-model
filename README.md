@@ -2,13 +2,13 @@
 
 ## Table of contents
 
-- [Data sets](#data-sets)
 - [Summary](#summary)
+- [Data sets](#data-sets)
 - [Twitter results](#twitter-results)
 - [Challenges with the data](#challenges-with-the-data)
 - [Feature engineering](#feature-engineering)
 - [Modeling visitor rates](#modeling-visitor-rates)
-- [Rain, rain, don't go away](#rain-rain-dont-go-away)
+- [Rain, rain, don't go away?](#rain-rain-dont-go-away)
 - [What makes a good day at the museum?](#what-makes-a-good-day-at-the-museum)
 - [Future directions](#future-directions)
 - [Author](#author)
