@@ -19,7 +19,7 @@ This project looks at visitor data and social media timelines to predict changes
 
 1. To capitalize on potential revenue from high visitor volumes (e.g., gift shop sales, food, special exhibit tickets), it would make sense to plan exhibition openings and special events, discounted food days, etc. when summer peak temperatures are expected to be high (above 28 ºC)
 
-2. Although it isn't surprising that museum closing strongly predicts visitor numbers, to maximize visitor volume, it would make sense to close the museum more frequently in the spring when TMIN is low and overall visitor numbers are down, as kids are back in school
+2. Although it isn't surprising that museum closing strongly predicts visitor numbers, to maximize visitor volume, it would make sense to close the museum more frequently in the spring when minimum daily temperatures are low and overall visitor numbers are down with kids back in school
 
 3. The number of tweets put out by the Bristol Museum had little effect on visitors, and there was a flatline after 5-10 tweets per day, suggesting that this would be an optimal number going forward to optimize time budgets (of social media staff, etc)
 
