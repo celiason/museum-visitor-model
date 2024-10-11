@@ -3,7 +3,7 @@
 ## Table of contents
 
 - [Summary](#summary)
-- [Data used](#data-used)
+- [Data sources](#data-sources)
 - [Feature engineering](#feature-engineering)
 - [Challenges with the data](#challenges-with-the-data)
 - [Twitter scraping and analysis](#twitter-scraping-and-analysis)
@@ -26,7 +26,7 @@ This project looks at visitor data and social media timelines to predict changes
 ![](figs/visitors_bristol.png)
 Above is a plot showing changes in the number of visitors over time. The drops to zero that become more common in 2018-2019 are cases where the museum is closed (more on that later). 
 
-## Data used
+## Data sources
 - Museum visitor data obtained from the Bristol Museum [](https://opendata.bristol.gov.uk)
 - Tweets containing "Bristol Museum" (see data/processed folder)
 - Weather data downloaded using `meteostat`
